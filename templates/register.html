@@ -1,0 +1,187 @@
+{%  load static %}
+<html lang="en">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>SignUp</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Acme|Hina Mincho');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+body:before {
+	content: '';
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+    background:url({% static 'images/last.jpg' %});
+	background-position: left center;
+	background-repeat: no repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-filter: blur(15px);
+	-moz-filter: blur(30px);
+	filter: blur(3px);
+}
+.contact-form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 620px;
+	padding: 60px 50px;
+	background: rgba(0, 0, 0, 0.8);
+
+}
+.avatar {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: calc(-40px/2);
+	left: 210px;
+}
+.contact-form h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	color: white;
+	text-align: center;
+	 font-family:Rampart One;
+	text-transform: uppercase;
+}
+.contact-form label {
+	margin: 0px;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+	 font-family:Pacifico;
+	 font-size:18px;
+
+}
+
+
+.contact-form input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+.contact-form input[type=email], .contact-form input[type=password] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.contact-form input[type=text] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+.contact-form input[type=submit] {
+	height: 40px;
+	color: #fff;
+	font-size: 15px;
+	background: red;
+	cursor: pointer;
+	border-radius: 25px;
+	border: none;
+	outline: none;
+	margin-top: 0%;
+}
+.contact-form a {
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+}
+input[type=checkbox] {
+	width: 20%;
+}
+.login-wrapper-footer-text {
+    font-size: 16px;
+    color:white;
+    margin-bottom: 0; }
+
+
+
+
+</style>
+</head>
+
+<div style="height:100%;width:100%;display:inline-block">
+
+    <div class="splitdiv" id="leftdiv">
+        <div id="leftdivcard">
+            <div class="contact-form">
+
+                <img alt="" class="avatar" src="https://i.postimg.cc/zDyt7KCv/a1.jpg">
+                <h2>SignUp</h2>
+                <form action="register" method="POST">
+                    {% csrf_token %}
+
+                    <label >Firstname</label>
+                    <input type="text" name="first_name"  required="">
+
+                    <label>Lastname</label>
+                    <input type="text" name="last_name" required="">
+
+                    <label>Username</label>
+                    <input type="text" name="username"  required="">
+
+                    <label>Email</label>
+                    <input type="email" name="email"   required="">
+
+                    <label>Password</label>
+                    <input type="password" name="password1"  required="">
+
+                    <label>Confirm Password</label>
+                    <input type="password" name="password2"  required="">
+
+                    <input type="submit" value="submit">
+                </form>
+
+
+
+                <div class="design">
+                    <p class="login-wrapper-footer-text">Already have an account? &nbsp&nbsp<a href="login" class="text-reset"><u>Login here</u></a></p>
+                </div>
+                <div class="inputbox">
+                    {% for message in messages %}
+                    <h3 style="color:white;">{{message}}</h3>
+                    {%  endfor %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="splitdiv" id="rightdiv">
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+</body>
+</html>

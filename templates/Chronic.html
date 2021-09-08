@@ -1,0 +1,269 @@
+{% load static %}
+<html>
+  <head>
+      <style>
+      html, body
+      {
+      min-height: 100%;
+      background:url({% static 'images/image.png' %});
+      background-size:cover;
+      background-color:none;
+      }
+      body, div, form, input, select, textarea, label {
+
+      margin: 0;
+      outline: none;
+      font-family: cambria;
+      font-size: 18px;
+      color: black;
+      line-height: 20px;
+      background-color:#F5F5F5;
+      }
+      h1 {
+      background-color:#F5F5F5;
+      position: absolute;
+      margin:0;
+      font-family:Break;
+      font-size: 60px;
+      color: #000000;
+      border-radius:10px;
+      line-height: 83px;
+      top:50px;
+
+      }
+      legend {
+      padding: 15px;
+      font-family: cambria;
+      font-size: 25px;
+      color: white;
+      background-color: #1c87c9;
+      border-radius:5px;
+      text-align:center;
+      }
+      .testbox {
+      display: flex;
+      padding: 10px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+
+      background:white;
+      box-shadow: 0 0 15px #006622;
+      }
+      .banner {
+      position: relative;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius:100px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      }
+      input, select, textarea {
+      margin-bottom: 5px;
+      border: 4px solid #ccc;
+      border-radius: 1px;
+
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 7px;
+
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      color:black;
+      }
+       .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 1px 0  #006622;
+      color: #006622;
+
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      border:none;
+      padding:2px;
+      margin:5px;
+      }
+      .colums div {
+      width:49%;
+
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 250px;
+      padding: 20px;
+      border: none;
+      border-radius: 0px;
+      background:  #1c87c9;
+      font-size: 16px;
+      font-weight:bold;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: skyblue;
+      color:black;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+    <form action="chronicpredict" method="POST">
+        {% csrf_token %}
+      <div class="banner">
+
+        <h1>CHRONIC KIDNEY DISEASE PREDICTION</h1>
+
+      </div>
+      <br/>
+
+        <legend>Enter The Details</legend>
+
+        <div class="colums">
+          <div class="item">
+            <label><b>Age</b></label>
+            <input type="text"   id="place" placeholder="Enter Your Age" name="age" required>
+          </div>
+
+          <div class="item">
+             <label><b>Blood_Pressure</b></label>
+            <input type="text" id="place"  placeholder="Enter Blood Pressure Value" name="bp" required>
+          </div>
+
+          <div class="item">
+            <label><b>Urinary_specific_gravity</b></label>
+            <input type="text"   id="place"   placeholder="Enter SG Value" name="sg" required>
+          </div>
+
+          <div class="item">
+            <label><b>AL</b></label>
+            <input type="number" id="place"  min="0" max="4" placeholder="Select the Al value" name="al" required>
+          </div>
+
+          <div class="item">
+            <label><b>STROKE_UNIT</b></label>
+            <input type="number" min="0" max="5" id="place" placeholder="Select Stroke Unit" name="su" required>
+          </div>
+          <div class="item">
+           <label><b>Red_Blood_Cells</b></label>
+            <input type="number" min="0" max="1"   id="place" placeholder="Select Rbc value (normal=1 abnormal=0)" name="rbc" required>
+          </div>
+          <div class="item">
+            <label><b>Post_Cibum</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select PC value (normal=1 abnormal=0)" name="pc" required>
+          </div>
+          <div class="item">
+           <label><b>Protein_C_Cofactor</b></label>
+            <input type="number" min="0" max="1" id="place" placeholder="Select PCC Value (Present=1 NotPresent=0)" name="pcc" required>
+          </div>
+
+          <div class="item">
+           <label><b>Blood_Alcohol</b></label>
+            <input type="number"  min="0" max="1" placeholder="Select BA Value (Present=1 NotPresent=0)" name="ba" required>
+          </div>
+
+            <div class="item">
+           <label><b>Blood_Glucose_Regulator</b></label>
+            <input type="text"   placeholder="Enter Blood Glucose Regulator Value" name="bgr" required>
+          </div>
+
+          <div class="item">
+           <label><b>Blood_Unit</b></label>
+            <input type="text"  placeholder="Enter Blood Unit Value" name="bu" required>
+          </div>
+          <div class="item">
+           <label><b>Sickle_Cell</b></label>
+            <input type="number" min="0" max="16" step="0.2" placeholder="Select SC  Value" name="sc" required>
+          </div>
+          <div class="item">
+           <label><b>Sphincter_Of_Oddi_Dysfunction</b></label>
+            <input type="text"  placeholder="Enter SOD Value" name="sod" required>
+          </div>
+          <div class="item">
+           <label><b>Postural_tachycardia_syndrome</b></label>
+            <input type="text" placeholder="Enter POT Value" name="pot"   required>
+          </div>
+
+            <div class="item">
+           <label><b>Hemoglobin</b></label>
+            <input type="text" placeholder="Enter Hemoglobin Value" name="hemo"   required>
+          </div>
+
+            <div class="item">
+           <label><b>Packed_Cell_Volume</b></label>
+            <input type="text" placeholder="Enter PCV Value" name="pcv"   required>
+          </div>
+
+            <div class="item">
+           <label><b>White_Cells</b></label>
+            <input type="text" placeholder="Enter WC Value" name="wc"   required>
+          </div>
+
+            <div class="item">
+           <label><b> Respiratory_Congestion</b></label>
+            <input type="text" placeholder="Enter5 rc Value" name="rc"   required>
+          </div>
+
+            <div class="item">
+           <label><b>HYPERTENSION</b></label>
+            <input type="number" min="0" max="1" placeholder="Select High Blood Pressure value (Yes=1 ,No=0)" name="htn"   required>
+          </div>
+            <div class="item">
+           <label><b>Diabetes_Mellitus</b></label>
+            <input type="number"  min="0" max="1" placeholder="Select DM Value (Yes=1 ,No=0)" name="dm"   required>
+          </div>
+
+            <div class="item">
+           <label><b>Coronary_Artery_Disease</b></label>
+            <input type="number"   min="0" max="1" placeholder="Select CAD Value (Yes=1 ,No=0)" name="cad"   required>
+          </div>
+
+            <div class="item">
+           <label><b>Appetite</b></label>
+            <input type="number" min="0" max="1"  placeholder="Select appetite (Good=1, Poor=0)" name="appet"   required>
+          </div>
+
+            <div class="item">
+           <label><b>Pulmonary_Embolism </b></label>
+            <input type="number"  min="0" max="1" placeholder="Select PE Value (Yes=1,No=0)" name="pe"   required>
+          </div>
+
+            <div class="item">
+           <label><b>Acute_Necrotizing_Encephalopathy</b></label>
+            <input type="number"  min="0" max="1" placeholder="Select ane Value (Yes=1, No=0)" name="ane"   required>
+
+          </div>
+
+    </form>
+
+
+          <div class="btn-block"><center>
+      <button type="submit">PREDICT</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="submit" formaction="index">BACK</button></center>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

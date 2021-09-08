@@ -1,0 +1,304 @@
+{% load static %}
+<html>
+<head>
+<title>Chronic Kidney Prediction</title>
+<style>
+body
+      {
+
+
+      border:7px solid black;
+      border-radius:10px;
+      background:url({% static 'images/bed.jpg' %});
+      background-position: center;
+      background-size:cover;
+       background-color:none;
+       backdrop-filter: blur(4px);
+
+
+      }
+
+      body, div, form, input, select, textarea, label {
+      padding:10px;
+      margin:2px solid;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color:black;
+      line-height: 20px;
+      text-align:left;
+
+      }
+      .testbox {
+      display: flex;
+      padding: 20px;
+      color:black;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      color:black;
+
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums div {
+      width:48%;
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 120px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background:  Darkred;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      font-family:cambria;
+      font-weight:bold
+      }
+      button:hover {
+      background:  white;
+      color:black;
+      text-align:center;
+      }
+      .Border
+      {
+         border:2px solid black;
+         height:20px;
+         width:20px;
+         padding:15px;
+         cell-spacing:0px;
+         text-align:center;
+         justify-content:space-between;
+         border-left: 10px solid darkred;
+         border-bottom: 3px solid black;
+
+
+      }
+      label
+      {
+color:black;
+font-weight:bold;
+font-size:23px;
+}
+</style>
+</head>
+
+<body>
+<div>
+
+
+    <h1 style="color:black;"><i><b>Hello <u>{{user.first_name}}</u></b></i></h1>
+
+    <p style="color:darkred;font-size:30px;">Results:&nbsp&nbspYou Are {{chronic}} for the Chronic Kidney Disease </p>
+    <h2 style="color:black;">Based on the details you have entered :-</h2></div>
+    <div class="testbox">
+    <div class="colums">
+          <div class="item">
+
+              <label>Age:-</label>
+              <div class="Border">
+                  <h2>{{age}}</h2>
+              </div>
+              </div>
+
+
+          <div class="item">
+              <label>Blood_Pressure:-</label>
+               <div class="Border">
+                   <h2>{{bp}}</h2>
+               </div>
+              </div>
+
+
+          <div class="item">
+              <label>Urinary_specific_gravity:-</label>
+              <div class="Border">
+                  <h2>{{sg}}</h2>
+              </div>
+             </div>
+
+
+          <div class="item">
+              <label>AL:-</label>
+              <div class="Border">
+                  <h2>{{al}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>STROKE_UNIT:-</label>
+              <div class="Border">
+                  <h2>{{su}}</h2>
+           </div>
+          </div>
+
+
+          <div class="item">
+              <label>Red_Blood_Cells:-</label>
+              <div class="Border">
+        <h2>{{rbc}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+               <label>Post_Cibum:-</label>
+              <div class="Border">
+                  <h2>{{pc}}</h2>
+              </div>
+          </div>
+
+
+          <div class="item">
+               <label>Protein_C_Cofactor:-</label>
+               <div class="Border">
+              <h2>{{pcc}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Blood_Alcohol:-</label>
+              <div class="Border">
+                  <h2> {{ba}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Blood_Glucose_Regulator:-</label>
+               <div class="Border">
+                   <h2>{{bgr}}</h2>
+
+          </div>
+              </div>
+
+
+          <div class="item">
+              <label>Blood_Unit:-</label>
+              <div class="Border">
+                  <h2>{{bu}}</h2>
+              </div>
+          </div>
+
+
+          <div class="item">
+              <label>Sickle_Cell:-</label>
+              <div class="Border">
+        <h2>{{sc}}</h2>
+              </div>
+              </div>
+
+
+          <div class="item">
+              <label>Sphincter_Of_Oddi_Dysfunction:-</label>
+              <div class="Border">
+        <h2>{{sod}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Postural_tachycardia_syndrome:-</label>
+              <div class="Border">
+        <h2>{{pot}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Hemoglobin:-</label>
+              <div class="Border">
+        <h2>{{hemo}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Packed_Cell_Volume:-</label>
+              <div class="Border">
+        <h2>{{pcv}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>White_Cells:-</label>
+              <div class="Border">
+        <h2>{{wc}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Respiratory_Congestion:-</label>
+              <div class="Border">
+        <h2>{{rc}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>HYPERTENSION:-</label>
+              <div class="Border">
+        <h2>{{htn}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Diabetes_Mellitus:-</label>
+              <div class="Border">
+        <h2>{{dm}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Coronary_Artery_Disease:-</label>
+              <div class="Border">
+        <h2>{{cad}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Appetite:-</label>
+              <div class="Border">
+        <h2>{{appet}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Pulmonary_Embolism:-</label>
+              <div class="Border">
+        <h2>{{pe}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Acute_Necrotizing_Encephalopathy:-</label>
+              <div class="Border">
+        <h2>{{ane}}</h2>
+              </div>
+              </div>
+
+
+    </div>
+         </div>
+         </form>
+
+
+
+    <form method="get" action="/" >
+    <div class="btn-block">
+        <h3><center><button type="submit" action="/">LOGOUT</button></center></h3>
+    </div>
+
+    </form>
+
+</body>
+</html>

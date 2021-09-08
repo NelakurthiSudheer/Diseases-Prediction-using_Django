@@ -1,0 +1,227 @@
+{% load static %}
+<html>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Acme|Lobster');
+
+/* This allow me to have the full width of the page without the initial padding/margin*/
+body, html {
+  margin:0;
+  padding:0;
+  height: 100%;
+  width:100%;
+  font-family:Acme;
+  min-width:700px;
+}
+
+.splitdiv{
+  height:100%;
+  width:50%;
+}
+#leftdiv{
+  float:left;
+  background-color:#EDF5E1;
+
+}
+
+#leftdivcard{
+  margin:0 auto;
+  width:50%;
+  text-align:center;
+  background-color:skyblue;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  box-shadow: 20px 20px 20px 20px lightblue;
+  border-radius:10px
+}
+
+#leftbutton{
+    background-color:green;
+    color:white;
+    border-radius:5px;
+    width:100px;
+    font-family:Lobster;
+    font-size:20px;
+}
+#leftbutton:hover
+{
+color:darkgreen;
+background-color:white;
+}
+
+/* ----------------------------------------- */
+
+/* This part contains all of the left side of the screen */
+/* ----------------------------------------- */
+#rightdiv{
+  float:right;
+   background-color:none;
+   background:url({% static 'images/doc.jpg' %});
+   background-position: center;
+   background-size: 1000px 800px;
+   background-repeat: no-repeat;
+}
+
+#rightdivcard{
+  margin:0 auto;
+  width:60%;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  background-image: linear-gradient(to right, white 33%,  rgba(255,255,255,0) 0%);
+  background-position: bottom;
+  background-size: 20px 2px;
+  background-repeat: repeat-x;
+}
+
+#rightbutton{
+    background-color:green;
+    border-radius:5px;
+    color:white;
+
+}
+#rightbutton:hover
+{
+color:black;
+background-color:white;
+}
+
+/* ----------------------------------------- */
+
+/* Basic styling */
+/* ----------------------------------------- */
+
+h1{
+  font-family:Lobster;
+  color:#4ECDC4
+}
+
+input{
+  font-family:Acme;
+  font-size:17px;
+
+}
+
+input{
+  width:85%;
+  height:40px;
+  padding:10px;
+  margin-left:2%;
+  margin-right:2%;
+  margin-top:10px;
+  margin-bottom:10px;
+  display:inline-block;
+  background-color:#FAFAFA;
+  border:3px solid green;
+  border-radius:5px;
+  font-size:19px;
+
+
+}
+
+input:focus {
+    outline: none !important;
+    border:1px solid #4ECDC4;
+    box-shadow: 0 0 5px #719ECE;
+
+}
+
+button{
+  outline: none !important;
+  font-family:Lobster;
+  margin-bottom:15px;
+  border:none;
+  font-size:20px;
+  padding:8px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+/* ----------------------------------------- */
+
+/* Animation for the buttons from
+
+https://codepen.io/finnhvman/pen/jLXKJw
+
+*/
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #4ECDC4 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #4ECDC4;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.ripple2 {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple2:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #FFFFFF 1%) center/15000%;
+}
+
+.ripple2:active {
+  background-color: #FAFAFA;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+label {
+color: black;
+display: block;
+width: 155px;
+float: left;
+font-size:19px;
+font-family:cambria;
+font-weight:bold;
+}
+</style>
+
+  <body>
+  <form action="login" method="POST">
+      {% csrf_token %}
+    <div style="height:100%;width:100%;display:inline-block">
+
+    <div class="splitdiv" id="leftdiv">
+      <div id="leftdivcard">
+        <h1 style="padding-top:20px;text-align:center;color:black">Sign In</h1>
+          <label class="correct">Username</label>
+          <input type="text" name="username" placeholder="username" required/>
+          <label class="correct" >Password</label>
+          <input type="password" name="password" placeholder="password"  required/>
+          <div style="text-align:center">
+           <center><input type="submit" id="leftbutton" class="ripple" value="Login"></center>
+              <marquee direction = "left" onmouseover="this.stop();" onmouseout="this.start();">
+
+
+              {% for message in messages %}
+
+               <h3 style="color:#ff0000; font-family:Anton; font-size:22px;">{{message}}</h3>
+               {%  endfor %}
+                  </marquee>
+          </div>
+      </div>
+    </div>
+    </form>
+    <div class="splitdiv" id="rightdiv">
+      <div id="rightdivcard">
+
+        <h1 style="padding-top:20px;text-align:center;color:white;font-size:30px;">New here ?</h1>
+        <div style="text-align:center">
+
+            <td><form method="get" action="register">
+    <button id="rightbutton"  foraction="register" class="ripple">Create An Account</button>
+            </form>
+
+            </td>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+{% load static %}
+<html>
+  <head>
+      <style>
+      html, body
+      {
+      min-height: 100%;
+      background:url({% static 'images/image.png' %});
+      background-size:cover;
+      background-color:none;
+      }
+      body, div, form, input, select, textarea, label {
+
+      margin: 0;
+      outline: none;
+      font-family: cambria;
+      font-size: 18px;
+      color: black;
+      line-height: 20px;
+      background-color:#F5F5F5;
+      }
+      h1 {
+      background-color:#F5F5F5;
+      position: absolute;
+      margin:0;
+      font-family:Break;
+      font-size: 60px;
+      color: #000000;
+      border-radius:10px;
+      line-height: 83px;
+      top:50px;
+
+      }
+      legend {
+      padding: 15px;
+      font-family: cambria;
+      font-size: 25px;
+      color: white;
+      background-color: #1c87c9;
+      border-radius:5px;
+      text-align:center;
+      }
+      .testbox {
+      display: flex;
+      padding: 10px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+
+      background:white;
+      box-shadow: 0 0 15px #006622;
+      }
+      .banner {
+      position: relative;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius:100px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      }
+      input, select, textarea {
+      margin-bottom: 5px;
+      border: 4px solid #ccc;
+      border-radius: 1px;
+
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 7px;
+
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      color:black;
+      }
+       .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 1px 0  #006622;
+      color: #006622;
+
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      border:none;
+      padding:2px;
+      margin:5px;
+      }
+      .colums div {
+      width:49%;
+
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 250px;
+      padding: 20px;
+      border: none;
+      border-radius: 0px;
+      background:  #1c87c9;
+      font-size: 16px;
+      font-weight:bold;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: skyblue;
+      color:black;
+
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+    <form action="heartpredict" method="POST">
+        {% csrf_token %}
+      <div class="banner">
+
+        <h1>HEART DISEASE PREDICTION</h1>
+      </div>
+      <br/>
+
+        <legend>Enter The Details</legend>
+        <div class="colums">
+          <div class="item">
+            <label><b>Age</b></label>
+            <input type="text"   id="place" placeholder="Enter Your Age" name="age" required>
+          </div>
+          <div class="item">
+             <label><b>Gender</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select Gender" name="gender" required>
+          </div>
+          <div class="item">
+            <label><b>Constrictive_pericarditis</b></label>
+            <input type="number"   id="place"  min="0" max="3" placeholder="Select CP Value" name="cp" required>
+          </div>
+          <div class="item">
+            <label><b>Resting_Blood_Pressure</b></label>
+            <input type="text" id="place" placeholder="Enter Trestbps Value" name="trestbps" required>
+          </div>
+          <div class="item">
+            <label><b>Serum_Cholesterol</b></label>
+            <input type="text"  id="place" placeholder="Enter Cholesterol Value" name="chol" required>
+          </div>
+          <div class="item">
+           <label><b>Fasting_Blood_Pressure</b></label>
+            <input type="number" min="0" max="1"   id="place" placeholder="Select FBS Value" name="fbs" required>
+          </div>
+          <div class="item">
+            <label><b>Restecg</b></label>
+            <input type="number" id="place" min="0" max="2" placeholder="Selct RestECG Value" name="restecg" required>
+          </div>
+          <div class="item">
+           <label><b>Maximum_Heart_Rate_Achieved</b></label>
+            <input type="text"  id="place" placeholder="Enter thalach Value" name="thalach" required>
+          </div>
+          <div class="item">
+           <label><b>Exercise_Induced_Angina</b></label>
+            <input type="number"  min="0" max="1" placeholder="Select Exang Value" name="exang" required>
+          </div>
+          <div class="item">
+           <label><b>Exercise_Relative_To_Rest</b></label>
+            <input type="text"  placeholder="Enter Oldpeak Value" name="oldpeak" required>
+          </div>
+          <div class="item">
+           <label><b>Speech_Language_Pathologist</b></label>
+            <input type="number" min="0" max="2" placeholder="Select SLP Value" name="slp" required>
+          </div>
+          <div class="item">
+           <label><b>Coronary_Artery_Anomaly</b></label>
+            <input type="number" min="0" max="4" placeholder="Select CAA  Value" name="caa" required>
+          </div>
+          <div class="item">
+           <label><b>Thalassemia</b></label>
+            <input type="number" placeholder="Select Thal Value" name="thal"  min="0" max="3" required>
+          </div>
+
+        </div>
+<div class="btn-block">
+      <button type="submit">PREDICT</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="submit">BACK</button>
+</div>
+
+
+    </form>
+
+
+
+      </div>
+
+    </div>
+
+
+  </body>
+</html>

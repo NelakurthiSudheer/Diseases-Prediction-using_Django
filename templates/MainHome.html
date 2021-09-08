@@ -1,0 +1,258 @@
+{% load static %}
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+<style>
+form {
+    border:4px solid black;
+
+
+
+
+  }
+
+.a
+{
+  color : black
+
+  ;
+  font-size : 15px;
+  text-decoration : none;
+}
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color:none;
+    color:black;
+    margin: 0px 0px;
+    font-size:20px ;
+    font-family:Arial ;
+    height:50px;
+    border:2px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 20;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+
+  .container {
+    padding: 30px;
+  }
+
+
+
+  @media screen and (max-width: 300px) {
+    span.new {
+      display: block;
+      float: none;
+    }
+  }
+  body{
+
+
+      background-color:none;
+      background:url({% static 'images/1.jpg' %});
+
+
+
+    }
+x
+{
+  color : black;
+  font-size : 20px;
+  text-decoration : none;
+}
+x:hover
+{
+  color : yellow;
+  font-size : 24px;
+}
+.xx
+{
+  text-align : justify;
+font-size : 20px;
+line-height : 30px;
+text-indent : 0px;
+padding : 20px;
+
+opacity : 0.9;
+
+}
+.yy
+{
+  text-align : center;
+font-size : 20px;
+line-height : 10px;
+text-indent : 10px;
+padding : 0px;
+//opacity : 0.7;
+
+}
+.one
+{
+border:10px solid slategray;
+border-radius:0px;
+}
+
+#leftbox {
+           float:left;
+           background:none;
+            width:32.7%;
+            height:750px;
+            border:4.4px solid black;
+            color:black;
+            font-size:16px;
+
+ }
+ #middlebox{
+         float:left;
+         background:none;
+         width:32.7%;
+         height:750px;
+         border:4.5px solid black;
+         color:black;
+         font-size:16px;
+
+          }
+ #rightbox{
+           float:right;
+            background:none;
+            width:32.7%;
+            height:750px;
+            border:5.3px solid black;
+            color:black;
+            font-size:16px;
+            }
+
+
+</style>
+</head>
+<body>
+<table><tr</tr></table>
+<table  width="100%" style="background-color:none;text-align:center;" cellspacing="0" cellpadding="0"  align="center">
+    <td width="20%"><form  action="/" style="font-size: 0px">
+    <button type="submit">HOME</button>
+</form></td>
+
+     <td width="20%"><form method="get" action="Heart" style="font-size: 0px">
+          <div class="one">
+    <button type="submit">HEART</button>
+         </div>
+</form></td>
+    <td width="20%"><form method="get" action="Covid" style="font-size: 0px">
+        <div class="one">
+    <button type="submit">COVID-19</button>
+        </div>
+
+</form></td>
+    <td width="20%"><form method="get" action="Chronic" style="font-size: 0px">
+        <div class="one">
+    <button type="submit">CHRONIC KIDNEY</button>
+        </div>
+    </form></td>
+    <td width="20%"><form method="get" action="/" style="font-size: 0px">
+    <button type="submit">LOGOUT</button>
+    </form></td>
+
+
+<!--<td width="10%"><form method="get" action="about/" style="font-size: 0px">
+    <button type="submit">About Us</button>
+</form></td>
+<td width="10%"><form method="get" action="Contact/" style="font-size: 0px">
+    <button type="submit">Contact Us</button>-->
+
+
+
+
+
+
+<td width=20%></td>
+</table>
+
+
+     <div id = "boxes">
+
+
+            <div id = "leftbox">
+                <h2 style="color:darkred;"> <center><u>HEART DISEASE</u></center></h2>
+
+                    <center><img src="{% static 'images\heart.jpg' %}" height="200px" width="400px" border="3px" ></center><br>
+
+                <p style="font-size:30px">
+                <center><p style="font-family:verdana"><b><u>Overview</u></b></p></center>
+                Heart disease describes a range of conditions that affect your heart. Heart diseases include:
+                <ul>
+                    <li>Blood vessel disease, such as coronary artery disease</li>
+                    <li>Blood vessel disease, such as coronary artery disease</li>
+                <li>Heart rhythm problems (arrhythmias)</li>
+                <li> Heart defects you're born with (congenital heart defects)</li>
+                <li> Heart valve disease</li>
+                <li> Disease of the heart muscle</li>
+                <li> Heart infection</li>
+                    <li>Heart disease symptoms depend on what type of heart disease you have</li>
+                </ul>
+                <p>This list does not include all possible symptoms.</p>
+                </p>
+            </div>
+
+            <div id = "middlebox">
+               <h2 style="color:darkred;"> <center><u>COVID-19</u></center></h2>
+
+                    <center><img src="{% static 'images\cc.png' %}" height="200px" width="400px" border="3px"></center><br>
+                 <center><p style="font-family:verdana" heigh="2px"><b><u>Overview</u></b></p></center>
+                <center>People with COVID-19 have had a wide range of symptoms reported – ranging from mild
+                    symptoms to severe illness. Symptoms may appear 2-14 days after exposure to the virus.
+                    Anyone can have mild to severe symptoms. People with these symptoms may have COVID-19:
+                  <ul>
+                      <li>Fever or chills</li>
+                      <li>Cough</li>
+                      <li>Shortness of breath or difficulty breathing</li>
+                      <li> Fatigue</li>
+                      <li>Muscle or body aches</li>
+                      <li>Fatigue</li>
+                      <li>Muscle or body aches</li>
+                      <li>Headache</li></ul>
+                </center>
+                <p>This list does not include all possible symptoms.</p>
+            </div>
+
+            <div id = "rightbox">
+                <h2 style="color:darkred;"> <center><u>CHRONIC KIDNEY DISEASE</u></center></h2>
+                 <center><img src="{% static 'images\kid.jpg' %}" height="200px" width="400px" border="3px"></center><br>
+                 <center><p style="font-family:verdana" heigh="2px"><b><u>Overview</u></b></p></center>
+                <h>Chronic kidney disease is a general term for heterogeneous disorders
+                    affecting kidney structure and function. </h>
+                Signs and symptoms of chronic kidney disease develop over time if kidney damage progresses slowly.
+                Signs and symptoms of kidney disease may include:
+                <ul>
+                    <li>Nausea</li>
+                    <li>Vomiting</li>
+                    <li>Loss of appetite</li>
+                    <li>Fatigue and weakness</li>
+                    <li>Sleep problems</li>
+                    <li>Swelling of feet and ankles</li>
+                    <li>Muscle twitches and cramps</li>
+                    <li>Chest pain, if fluid builds up around the lining of the heart</li>
+                </ul>
+                <p>This list does not include all possible symptoms.</p>
+            </div>
+        </div>
+
+</body>
+{% block content %}  {% endblock %}
+</html>
+
+
+

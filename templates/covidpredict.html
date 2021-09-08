@@ -1,0 +1,274 @@
+{% load static %}
+<html>
+<head>
+<title>Covid-19 Prediction</title>
+<style>
+body
+      {
+
+
+      border:7px solid black;
+      border-radius:10px;
+      background:url({% static 'images/covi.jpg' %});
+      background-position: center;
+      background-size:cover;
+       background-color:none;
+       backdrop-filter: blur(4px);
+
+
+      }
+
+      body, div, form, input, select, textarea, label {
+      padding:10px;
+      margin:2px solid;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color:black;
+      line-height: 20px;
+      text-align:left;
+
+      }
+      .testbox {
+      display: flex;
+      padding: 20px;
+      color:black;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      color:black;
+
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums div {
+      width:48%;
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 120px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background:  Darkred;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      font-family:cambria;
+      font-weight:bold
+      }
+      button:hover {
+      background:  white;
+      color:black;
+      text-align:center;
+      }
+      .Border
+      {
+         border:2px solid black;
+         height:20px;
+         border-width:5px;
+         padding:15px;
+         cell-spacing:0px;
+         text-align:center;
+         justify-content:space-between;
+         border-left: 10px solid darkred;
+         border-bottom: 5px solid white;
+
+
+      }
+      label
+      {
+color:black;
+font-weight:bold;
+font-size:23px;
+}
+</style>
+</head>
+
+<body>
+<div>
+
+
+    <h1 style="color:black;"><i><b>Hello <u>{{user.first_name}}</u></b></i></h1>
+
+    <p style="color:darkred;font-size:30px;">Results:&nbsp&nbspYou Are {{covid}} with Covid-19 </p>
+    <h2 style="color:black;">Based on the details you have entered :-</h2></div>
+    <div class="testbox">
+    <div class="colums">
+          <div class="item">
+
+              <label>Breathing_Problem:-</label>
+              <div class="Border">
+                  <h2>{{Breathing}}</h2>
+              </div>
+              </div>
+
+
+          <div class="item">
+              <label>Fever:-</label>
+               <div class="Border">
+                   <h2>{{fever}}</h2>
+               </div>
+              </div>
+
+
+          <div class="item">
+              <label>Dry_Cough:-</label>
+              <div class="Border">
+                  <h2>{{dc}}</h2>
+              </div>
+             </div>
+
+
+          <div class="item">
+              <label>Sore_throat:-</label>
+              <div class="Border">
+                  <h2>{{st}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Running_ose:-</label>
+              <div class="Border">
+                  <h2>{{rn}}</h2>
+           </div>
+          </div>
+
+
+          <div class="item">
+              <label>Asthma:-</label>
+              <div class="Border">
+        <h2>{{ast}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+               <label>Chronic_Lung_Disease:-</label>
+              <div class="Border">
+                  <h2>{{cld}}</h2>
+              </div>
+          </div>
+
+
+          <div class="item">
+               <label>Headache:-</label>
+               <div class="Border">
+              <h2>{{hdche}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Heart_Disease:-</label>
+              <div class="Border">
+                  <h2> {{hd}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Diabetes:-</label>
+               <div class="Border">
+                   <h2>{{dbts}}</h2>
+
+          </div>
+              </div>
+
+
+          <div class="item">
+              <label>Hyper_Tension:-</label>
+              <div class="Border">
+                  <h2>{{ht}}</h2>
+              </div>
+          </div>
+
+
+          <div class="item">
+              <label>Fatigue:-</label>
+              <div class="Border">
+                  <h2>{{ftgue}}</h2>
+              </div>
+              </div>
+
+
+          <div class="item">
+              <label>Gastro:-</label>
+              <div class="Border">
+        <h2>{{gastro}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Abroad_travel:-</label>
+              <div class="Border">
+                  <h2>{{at}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Contact_with_COVID_Patient:-</label>
+              <div class="Border">
+                  <h2>{{contact}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Attended_Large_Gathering:-</label>
+              <div class="Border">
+                  <h2>{{alg}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Visited_Public_Exposed_Places:-</label>
+              <div class="Border">
+                  <h2>{{vpep}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Family_working_in_Public_Exposed_Places:-</label>
+              <div class="Border">
+                  <h2>{{fwpep}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Wearing_Masks:-</label>
+              <div class="Border">
+                  <h2>{{masksw}}</h2>
+              </div>
+              </div>
+
+        <div class="item">
+              <label>Sanitization_from_Market:-</label>
+              <div class="Border">
+                  <h2>{{sfm}}</h2>
+              </div>
+              </div>
+    </div>
+         </div>
+         </form>
+
+
+
+    <form method="get" action="/" >
+    <div class="btn-block">
+        <h3><center><button type="submit" action="/">LOGOUT</button></center></h3>
+    </div>
+
+    </form>
+
+</body>
+</html>

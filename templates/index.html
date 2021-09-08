@@ -1,0 +1,159 @@
+{% load static %}
+<html>
+<head>
+<style>
+form {
+    border: 2px solid Grey;
+
+  }
+
+.a
+{
+  color : white;
+  font-size : 15px;
+  text-decoration : none;
+}
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color:#325C74;
+    color:White;
+    margin: 0px 0px;
+    font-size:20px ;
+    font-family:Arial ;
+    height:50px;
+    border:0;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 20;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+
+  .container {
+    padding: 30px;
+  }
+
+
+
+  @media screen and (max-width: 300px) {
+    span.new {
+      display: block;
+      float: none;
+    }
+  }
+  body{
+      background:url({% static 'images/cool.png' %});
+
+       background-size:cover;
+
+
+    }
+x
+{
+  color : white;
+  font-size : 20px;
+  text-decoration : none;
+}
+x:hover
+{
+  color : yellow;
+  font-size : 24px;
+}
+.xx
+{
+  text-align : justify;
+font-size : 20px;
+line-height : 30px;
+text-indent : 0px;
+padding : 20px;
+
+opacity : 0.9;
+
+}
+.yy
+{
+  text-align : center;
+font-size : 20px;
+line-height : 10px;
+text-indent : 10px;
+padding : 0px;
+//opacity : 0.7;
+
+}
+
+
+
+</style>
+</head>
+<body>
+<table><tr height="0px"></tr></table>
+<table border='1' width="100%" style="background-color:Black;text-align:center;" cellspacing="0" cellpadding="0"  align="center">
+<tr height="10px">
+<td width="70%">
+    <button type="submit">DISEASES PREDICTION</button>
+</td>
+<td width="10%"><form method="get" action="login" style="font-size: 0px">
+    <button type="submit">Sign In</button>
+</form></td>
+<td width="10%"><form method="get" action="register" style="font-size: 0px" >
+    <button type="submit">Sign Up</button>
+</form></td>
+</form></td>
+</tr>
+</table>
+<marquee direction="right"
+
+        behavior="alternate">
+   <p style="color:#000000;font-size:20px;"><b>WELCOME TO  THE DISEASES PREDICTION SITE!!!</b></p>
+</marquee>
+<table border='0' width="100%" cellspacing="0" cellpadding="0"  align="center" bgcolor="Sand Dollar" >
+<tr height="250px">
+  <td width=1%></td>
+<td><p class="xx">
+</p></td>
+<td width="20%"><img src="{% static 'images/covid.jpg' %}" height="200px" width="100%"></td>
+    <td width="20%"><img src="{% static 'images/kidney.png' %}" height="200px" width="100%"></td>
+    <td width="20%"><img src="{% static 'images/heart.jpg' %}" height="200px" width="100%"></td>
+
+
+
+
+<td width=20%></td>
+</table>
+
+<table border='0' width="100%" cellspacing="0" cellpadding="0"  align="center" bgcolor="White" >
+<tr height="400px">
+  <td width=8%></td>
+  <td><p class="xx" style="font-size:23px;">
+
+The main objective of this project is to predict different disases and compare which predictive model gives best accuracy comparing with other predictive models. This analysis will help the patients to check whether the patient is affected with the following Diseases or not through Online
+</style>
+  </p><ul style="font-size:30px;">
+      <li><i><b>COVID-19 </b></i></li>
+      <li><i><b>HEART DISEASE</b></i></li>
+      <li><i><b>CHRONIC KIDNEY DISEASE</b></i></li>
+  </style></ul></td>
+<td width=50%></td>
+</tr>
+<table>
+</tr>
+
+</table>
+</table>
+</body>
+{% block content %}  {% endblock %}
+</html>
+
+

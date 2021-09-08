@@ -1,0 +1,225 @@
+{% load static %}
+<html>
+<head>
+<title>Heart Prediction</title>
+<style>
+body
+      {
+
+
+      border:5px solid;
+      border-radius:15px;
+      background:url({% static 'images/heart1.jpg' %});
+      background-position: center;
+      background-size:cover;
+       background-color:none;
+       backdrop-filter: blur(4px);
+
+
+      }
+
+      body, div, form, input, select, textarea, label {
+      padding:10px;
+      margin:2px solid;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color:white;
+      line-height: 20px;
+      text-align:left;
+
+      }
+      .testbox {
+      display: flex;
+      padding: 20px;
+      color:black;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      color:black;
+
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums div {
+      width:48%;
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 120px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background:  Darkred;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      font-family:cambria;
+      font-weight:bold
+      }
+      button:hover {
+      background:  white;
+      color:black;
+      text-align:center;
+      }
+      .Border
+      {
+         border:3px solid black;
+         height:20px;
+         width:20px;
+         padding:15px;
+         cell-spacing:0px;
+         text-align:center;
+         justify-content:space-between;
+         border-left: 10px solid white;
+         border-bottom: 3px solid white;
+
+
+      }
+      label
+      {
+color:black;
+font-weight:bold;
+font-size:23px;
+}
+</style>
+</head>
+
+<body>
+<div>
+
+
+    <h1 style="color:black;"><i><b>Hello <u>{{user.first_name}}</u></b></i></h1>
+
+    <p style="color:white;font-size:30px;">Results:&nbsp&nbspYou Are {{heart}} for the Heart Disease </p>
+    <h2 style="color:black;">Based on the details you have entered :-</h2></div>
+    <div class="testbox">
+    <div class="colums">
+          <div class="item">
+
+       <label>Age :-</label>
+              <div class="Border">
+                  <h2 style="color:white;">{{age}}</h2>
+              </div>
+        </div>
+
+
+          <div class="item">
+              <label>Gender :-</label>
+               <div class="Border">
+        <h2>{{gender}}</h2>
+               </div>
+              </div>
+
+
+          <div class="item">
+              <label>Constrictive_pericarditis:-</label>
+              <div class="Border">
+              <h2>{{cp}}</h2>
+          </div>
+              </div>
+
+
+          <div class="item">
+              <label>Resting_Blood_Pressure:-</label>
+              <div class="Border">
+                  <h2>{{trestbps}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Serum_Cholesterol:-</label>
+              <div class="Border">
+              <h2>{{chol}}</h2>
+          </div>
+    </div>
+
+
+          <div class="item">
+              <label>Fasting_Blood_Pressure:-</label>
+              <div class="Border">
+        <h2>{{fbs}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+               <label>Restecg:-</label>
+              <div class="Border">
+                  <h2>{{restecg}}</h2>
+              </div>
+          </div>
+
+
+          <div class="item">
+               <label>Maximum_Heart_Rate_Achieved:-</label>
+               <div class="Border">
+              <h2>{{thalach}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Maximum_Heart_Rate_Achieved:-</label>
+              <div class="Border">
+                  <h2> {{exang}}</h2>
+          </div>
+          </div>
+
+
+          <div class="item">
+              <label>Exercise_Relative_To_Rest:-</label>
+               <div class="Border">
+                   <h2>{{oldpeak}}</h2>
+
+          </div>
+              </div>
+
+
+          <div class="item">
+              <label>Speech_Language_Pathologist:-</label>
+              <div class="Border">
+                  <h2>{{slp}}</h2>
+              </div>
+          </div>
+
+
+          <div class="item">
+              <label>Coronary_Artery_Anomaly:-</label>
+              <div class="Border">
+        <h2>{{caa}}</h2>
+              </div>
+              </div>
+
+
+          <div class="item">
+              <label>Thalassemia:-</label>
+              <div class="Border">
+        <h2>{{thal}}</h2>
+              </div>
+              </div>
+    </div>
+         </div>
+         </form>
+
+
+
+    <form method="get" action="/" >
+    <div class="btn-block">
+        <h3><center><button type="submit" action="/">LOGOUT</button></center></h3>
+    </div>
+
+    </form>
+
+</body>
+</html>

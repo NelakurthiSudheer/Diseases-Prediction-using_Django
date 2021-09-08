@@ -1,0 +1,274 @@
+{% load static %}
+<html>
+  <head>
+      <style>
+      html, body
+      {
+      min-height: 100%;
+      background:url({% static 'images/image.png' %});
+      background-size:cover;
+      background-color:none;
+      }
+      body, div, form, input, select, textarea, label {
+
+      margin: 0;
+      outline: none;
+      font-family: cambria;
+      font-size: 18px;
+      color: black;
+      line-height: 20px;
+      background-color:#F5F5F5;
+      }
+      h1 {
+      background-color:#F5F5F5;
+      position: absolute;
+      margin:0;
+      font-family:Break;
+      font-size: 60px;
+      color: #000000;
+      border-radius:10px;
+      line-height: 83px;
+      top:50px;
+
+      }
+      legend {
+      padding: 15px;
+      font-family: cambria;
+      font-size: 25px;
+      color: white;
+      background-color: #1c87c9;
+      border-radius:5px;
+      text-align:center;
+      }
+      .testbox {
+      display: flex;
+      padding: 10px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+
+      background:white;
+      box-shadow: 0 0 15px #006622;
+      }
+      .banner {
+      position: relative;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius:100px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      }
+      input, select, textarea {
+      margin-bottom: 5px;
+      border: 4px solid #ccc;
+      border-radius: 1px;
+
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 7px;
+
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      color:black;
+      }
+       .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 1px 0  #006622;
+      color: #006622;
+
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      border:none;
+      padding:2px;
+      margin:5px;
+      }
+      .colums div {
+      width:49%;
+
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 250px;
+      padding: 20px;
+      border: none;
+      border-radius: 0px;
+      background:  #1c87c9;
+      font-size: 16px;
+      font-weight:bold;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: skyblue;
+      color:black;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+    <form action="covidpredict" method="POST">
+        {% csrf_token %}
+      <div class="banner">
+
+        <h1>COVID-19 PREDICTION</h1>
+      </div>
+      <br/>
+
+        <legend>Enter The Details</legend>
+        <div class="colums">
+
+          <div class="item">
+             <label><b>Breathing_Problem</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="Breathing" required>
+          </div>
+
+            <div class="item">
+             <label><b>Fever</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="fever" required>
+          </div>
+
+            <div class="item">
+             <label><b>Dry_Cough</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="dc" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Sore_Throat</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="st" required>
+          </div>
+
+
+
+            <div class="item">
+             <label><b>Running_Nose</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="rn" required>
+          </div>
+
+
+
+            <div class="item">
+             <label><b>Asthama</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="ast" required>
+          </div>
+
+
+
+            <div class="item">
+             <label><b>Chronic_Lung_Disease</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="cld" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Headche</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="hdche" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Heart_Disease</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="hd" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Diabetes</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="dbts" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Hyper_Tension</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="ht" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Fatigue</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="ftgue" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Gastro</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="gastro" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Abroad_Travel</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="at" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Contact_With_Covid_Patient</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="contact" required>
+          </div>
+
+            <div class="item">
+             <label><b>Attended_Large_Gathering</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="alg" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Visited_Public_Exploded_Places</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="vpep" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Family_Working_in_Public_Exploded_Places</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="fwpep" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Wearing_Masks</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="masksw" required>
+          </div>
+
+
+            <div class="item">
+             <label><b>Sanitization_From_Market</b></label>
+            <input type="number" id="place" min="0" max="1" placeholder="Select (Yes=1, No=0)" name="sfm" required>
+          </div>
+
+    </form>
+          <div class="btn-block">
+      <button type="submit">PREDICT</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <button type="submit" formaction="index">BACK</button>
+
+      </div>
+
+
+    </div>
+
+
+  </body>
+</html>
