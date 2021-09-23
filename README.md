@@ -10,7 +10,7 @@ Then
 - Run python manage.py runserver
 - Navigate to http://127.0.0.1:8000/ in your browser
 
-##Have a look at the screenshots of the Diseases Prediction site in the outputs folder
+#Have a look at the screenshots of the Diseases Prediction site in the outputs folder
 
 ### ***If you are not able to understand anything in the project Connect or Contact me at https://nelakurthisudheer.github.io/ .***
 And if you like this project, do give it a "Star" Thank you..
