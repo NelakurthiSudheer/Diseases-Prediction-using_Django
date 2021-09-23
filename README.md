@@ -9,3 +9,8 @@ Then
 - Run python manage.py migrate
 - Run python manage.py runserver
 - Navigate to http://127.0.0.1:8000/ in your browser
+
+
+
+### ***If you are not able to understand anything in the project Connect or Contact me at https://nelakurthisudheer.github.io/ .***
+And if you like this project, do give it a "Star" Thank you..
