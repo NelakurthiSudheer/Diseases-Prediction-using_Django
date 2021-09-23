@@ -3,4 +3,4 @@ Different diseases (Heart | Covid-19| ChronicKidney ) Prediction site based on s
 #How to use this
 1.If u don't want to see the DataBase results which Display the users login details and diseases prediction details of respective users 
 2.If u do want manage the backend by urself plse 
-3.<a href="https://docs.djangoproject.com/en/3.2/ref/databases/>Sqlite connection for Django"></a>
+3.https://docs.djangoproject.com/en/3.2/ref/databases/Sqlite
