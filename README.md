@@ -13,4 +13,4 @@ Then
 ### Have a look at the screenshots of the Diseases Prediction site in the outputs folder
 
 ### ***If you are not able to understand anything in the project Connect or Contact me at https://nelakurthisudheer.github.io/ .***
-And if you like this project, do give it a "Star" Thank you..
+ ### <i>And if you like this project, do give it a "Star" Thank you..</i>
