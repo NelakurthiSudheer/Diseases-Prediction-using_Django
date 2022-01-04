@@ -8,7 +8,7 @@ Then
 - Run python manage.py makemigrations
 - Run python manage.py migrate
 - Run python manage.py runserver
-- Navigate to http://127.0.0.1:8000/ in your browser
+- Navigate to``` http://127.0.0.1:8000/``` in your browser
 
 ### Have a look at the screenshots of the Diseases Prediction site in the outputs folder
 
